@@ -11,6 +11,7 @@ services:
     networks:
       - monitoring
     environment:
+      - UWSGI_INI=/
       - LISTEN_PORT=8080
 #  influxdb:
 #    image: influxdb
