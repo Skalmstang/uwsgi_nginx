@@ -3,16 +3,14 @@ networks:
   monitoring:
 services:
   uwsgi-nginx:
-    image: tiangolo/uwsgi-nginx:python3.7
+    build: ./dash-example
+#    image: tiangolo/uwsgi-nginx:python3.7
     container_name: uwsgi-nginx
     restart: always
     ports:
       - 8080:8080
     networks:
       - monitoring
-    environment:
-      - UWSGI_INI=/
-      - LISTEN_PORT=8080
 #  influxdb:
 #    image: influxdb
 #    container_name: influxdb
